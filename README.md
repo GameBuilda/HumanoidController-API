@@ -8,13 +8,13 @@ What is a HumanoidController?
 HumanoidControllers are lightweight, script-friendly wrapper around a Roblox Humanoid.
 
 It standardizes and simplifies (or complicates?) :
--Damage
--Healing
--Teams and friendly-fire
--ForceField rules
--Status effects
--Signals and event flow
--Safe tracking (Mostly, damage sources without having to create creator tag instances.)
+- Damage
+- Healing
+- Teams and friendly-fire
+- ForceField rules
+- Status effects
+- Signals and event flow
+- Safe tracking (Mostly, damage sources without having to create creator tag instances.)
 Note : Each Roblox Humanoid can only have one HumanoidController.
 -> If you attempt to create another one for the same Humanoid, the module will simply return the existing controller.
 
@@ -31,10 +31,10 @@ This module is intentionally not optimized for micro-performance.
 It is designed to be:
 
 Extremely clear
--Easy to extend
--Easy to debug
--Easy for teams of developers to read
--Easy to modify with custom behaviors
+- Easy to extend
+- Easy to debug
+- Easy for teams of developers to read
+- Easy to modify with custom behaviors
 Submodules exist to avoid putting 1k+ lines in one module.
 All public methods are also available through the main module, so developers only need to:
 ```lua
@@ -70,15 +70,15 @@ Core Concepts
 
 1. Damage System - ```controller:TakeDamage()```
 The damage system handles:
--Damage application
--Modification before taken using callback
--Friendly-fire logic (team system)
--ForceField rules (scroll deeper)
--Damage tweens
--Damage options
--Source tracking
--Damage signals (OnDamage)
--Last common method tracking
+- Damage application
+- Modification before taken using callback
+- Friendly-fire logic (team system)
+- ForceField rules (scroll deeper)
+- Damage tweens
+- Damage options
+- Source tracking
+- Damage signals (OnDamage)
+- Last common method tracking
 
 Before :TakeDamage() actually damages, it calls this callback
 ```
@@ -104,9 +104,9 @@ module:NewDamageOptions()
 ```
 This will return a new table full of defaults which you can modify. This is used for further customization in ```controller:TakeDamage()``` as it takes a damage options as the 3rd parameter. (named Options meaning it is Optional)
 The damage options include :
--Damage tweening (not TweenService) (modified using DamageTweenInfo) (goodbye creating loops!)
--Tween interruptions (includes damage tweens and healing. Any tweens that are currently ongoing will be stopped except this one. Can be excluded using DamageTweenInterruptBlackList and HealingTweenInterruptBlackList)
--Insta kill (instead of :TakeDamage(math.huge), you can just use the InstaKill boolean option to deal Humanoid.Health amount of damage.)
+- Damage tweening (not TweenService) (modified using DamageTweenInfo) (goodbye creating loops!)
+- Tween interruptions (includes damage tweens and healing. Any tweens that are currently ongoing will be stopped except this one. Can be excluded using DamageTweenInterruptBlackList and HealingTweenInterruptBlackList)
+- Insta kill (instead of :TakeDamage(math.huge), you can just use the InstaKill boolean option to deal Humanoid.Health amount of damage.)
 -etc..
 
 
@@ -114,13 +114,13 @@ The damage options include :
 Healing is implemented with the identical structure of the damage system.
 Not so fun fact : it is named *Give*Heal because it is the opposite of *Take*.
 Includes :
--Healing application (obviously)
--Modification before taken using callback
--Healing tweens
--Healing options
--Source tracking
--Healing signals (OnHealing)
--Last common method tracking
+- Healing application (obviously)
+- Modification before taken using callback
+- Healing tweens
+- Healing options
+- Source tracking
+- Healing signals (OnHealing)
+- Last common method tracking
 
 Just like :TakeDamage(), it has an optional callback to modify the amount of heal before it is given :
 ```
@@ -144,9 +144,9 @@ HC:NewHealingOptions()
 ```
 Just like DamageOptions. This will return a new table full of defaults which you can modify. This is used for further customization in ```controller:GiveHeal()``` as it takes a healing options as the 3rd parameter.
 The healing options include :
--Healing Tweens (modify using HealingTweenInfo)
--Insta heal (instead of :TakeDamage(math.huge), you can just use the InstaFullHeal boolean option to give Humanoid.Health amount of healing.)
--Shared heal (a table full of humanoid controllers. When :GiveHeal is called, it calculates whatever missing health is left then calls :GiveHeal to each one of them splitting the amount of the missing health as heal)
+- Healing Tweens (modify using HealingTweenInfo)
+- Insta heal (instead of :TakeDamage(math.huge), you can just use the InstaFullHeal boolean option to give Humanoid.Health amount of healing.)
+- Shared heal (a table full of humanoid controllers. When :GiveHeal is called, it calculates whatever missing health is left then calls :GiveHeal to each one of them splitting the amount of the missing health as heal)
 
 
 3. Teams and Friendly-Fire System
@@ -250,6 +250,6 @@ Other Methods
 ```controller:Destroy()``` - to prevent memory leakage, this is automatically called (but can be called manually) after the humanoid is removed (Parent = nil).
 
 6:
-End
+Ending
 
 Hopefully this was all enough to explain, but you could just understand by viewing its raw code, type definitions, method documentations, and by how the methods are named.
