@@ -1,7 +1,7 @@
 # HumanoidController-API
 My second API (different from roblox's HumanoidController). Though doesn't target optimization, it targets users. Note, this wasn't tested :P except for some simple methods. Feedback is appreciated and helps ❤️.
 
-DevForum : ...
+DevForum : https://devforum.roblox.com/t/humanoid-controller-api-%F0%9F%95%B9%EF%B8%8F/4140707
 
 1 :
 What is a HumanoidController?
