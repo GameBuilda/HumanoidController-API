@@ -1,7 +1,7 @@
 # HumanoidController-API
 My second API (different from roblox's HumanoidController). Though doesn't target optimization, it targets users. Note, this wasn't tested :P except for some simple methods. Feedback is appreciated and helps ❤️.
 
-DevForum : https://devforum.roblox.com/t/humanoid-controller-api-%F0%9F%95%B9%EF%B8%8F/4140707
+DevForum : [is right here, just click me.](https://devforum.roblox.com/t/humanoid-controller-api/4140707)
 
 1 :
 What is a HumanoidController?
@@ -15,6 +15,7 @@ It standardizes and simplifies (or complicates?) :
 - Status effects
 - Signals and event flow
 - Safe tracking (Mostly, damage sources without having to create creator tag instances.)
+
 Note : Each Roblox Humanoid can only have one HumanoidController.
 -> If you attempt to create another one for the same Humanoid, the module will simply return the existing controller.
 
@@ -30,7 +31,7 @@ It is used so you don't have to create creator tags that take several lines incl
 This module is intentionally not optimized for micro-performance.
 It is designed to be:
 
-Extremely clear
+- Extremely clear
 - Easy to extend
 - Easy to debug
 - Easy for teams of developers to read
@@ -252,4 +253,4 @@ Other Methods
 6:
 Ending
 
-Hopefully this was all enough to explain, but you could just understand by viewing its raw code, type definitions, method documentations, and by how the methods are named.
+Hopefully this was all enough to explain and that I would not have to add more, but you could just understand by viewing its raw code, type definitions, method documentations, and by how the methods are named.
